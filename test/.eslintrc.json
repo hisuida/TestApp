@@ -1,0 +1,14 @@
+{
+  "extends": "../.eslintrc.json",
+  "globals": {
+    "after": false,
+    "afterEach": false,
+    "before": false,
+    "beforeEach": false,
+    "describe": false,
+    "expect": false,
+    "mocha": false,
+    "it": false,
+    "ApplicationHelper": false
+  }
+}
