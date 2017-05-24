@@ -6,26 +6,22 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var result = require('./routes/result');
 
 var app = express();
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-	host: '4d28bcf8-5ca3-47f1-bc54-a771012fcc51.mysql.sequelizer.com',
-	user: 'gpsobmslthufejao',
-	password: 'UYL6M4ZWmEicc3WduMSWyW24KtjfTxmcbHktphdtT4wDvPx2CTYFMki77RttSTdW',
-	database: 'db4d28bcf85ca347f1bc54a771012fcc51'
+  host: '4d28bcf8-5ca3-47f1-bc54-a771012fcc51.mysql.sequelizer.com',
+  user: 'gpsobmslthufejao',
+  password: 'UYL6M4ZWmEicc3WduMSWyW24KtjfTxmcbHktphdtT4wDvPx2CTYFMki77RttSTdW',
+  database: 'db4d28bcf85ca347f1bc54a771012fcc51'
 });
-
-connection.connect();
-
-connection.query('USE db4d28bcf85ca347f1bc54a771012fcc51');
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -34,15 +30,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+    // parse application/json
+    app.use(bodyParser.json());                        
+    // parse application/x-www-form-urlencoded
+    app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.use('/', index);
-app.use('/users', users);
+//app.get('/result*',function (req, res){
+//  var key = req.query.key;
+//  res.render('result', key);
+//});
+//app.use('/users', users);
 
-app.get('/', function(req, res){
-	connection.query('SELECT * from OrderData', function(err, rows){
-		res.render('CustomerID', {CustomerID : rows});
-	});
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
