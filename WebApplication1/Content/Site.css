@@ -16,3 +16,31 @@ textarea {
     max-width: 280px;
 }
 
+    div.help-block {
+        background-color: darkseagreen;
+        padding: 10px;
+        display: none;
+        margin-left:5%;
+    }
+    span.help-block:hover + div.help-block {
+        display: block;
+    }
+    span.help-block {
+        margin-left:5%;
+    }
+    label {
+    /* Other styling.. */
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+    form {
+        padding-left:35%;
+    }
+        .content-box-blue {
+    background-color: #eaecf0;
+    border: 1px solid #b9c4e2;
+    padding: 15px 20px;
+    margin: 20px 0;
+}
