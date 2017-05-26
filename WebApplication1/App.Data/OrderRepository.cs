@@ -28,6 +28,7 @@ namespace WebApplication1.App.Data
             using (var _cn = new MySqlConnection(constr))
             {
                 order = _cn.Query<Order>("Select o.SerialNumber_ID, o.CustomerID, o.OrderDate, o.OrderNumber, s.SiteName, p.Description, p.TypeURL from OrderData o Inner Join ProductData p ON o.Type_ID = p.ID Inner Join OrderSite s ON o.OrderSite = s.ID where o.SerialNumber_ID = @SerialNum", new { SerialNum = Serial }).FirstOrDefault();
+               
             }
             return order;
         }
