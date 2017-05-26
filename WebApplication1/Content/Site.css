@@ -17,17 +17,20 @@ textarea {
 }
 
     div.help-block {
-        background-color: darkseagreen;
+        background-color: #c9e7e2;
         padding: 10px;
         display: none;
         margin-left:5%;
     }
+
     span.help-block:hover + div.help-block {
         display: block;
     }
+
     span.help-block {
         margin-left:5%;
     }
+
     label {
     /* Other styling.. */
     text-align: right;
