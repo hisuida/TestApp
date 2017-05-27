@@ -21,7 +21,15 @@
             </tr>
             <tr>
                 <th>Owned By: </th>
+                @if (Model.DisplayID != null)
+                {
+                    <td>@Model.DisplayID</td>
+                }
+                else
+                {
                 <td>@Model.CustomerID</td>
+                }
+                
             </tr>
             <th>Order Date: </th>
             <td>@Model.OrderDate</td>
@@ -61,6 +69,9 @@
             </tr>
         </table>
     </div>
+    <br />
+    <br />
+
 }
 else
 {
@@ -74,15 +85,19 @@ else
     <div class="content-box-blue" id="result">
     </div>
     <br />
+    <br />
 }
 
+<div class="footer">
+    For questions regarding this website, please <a href="mailto:dollpygmalion@gmail.com">email</a> the webmaster
+</div>
 <script>
     window.onload = function () {
         var input = document.querySelector('input[type=checkbox]');
 
         function check() {
             var a = input.checked ?
-                "<p>등록되지 않은 인증번호이거나 인증번호를 잘못 입력하셨습니다.</p><p>인증번호 확인에 문제가 있을 시 <a href='mailto:pygmalion_d@naver.com'>pygmalion_d@naver.com</a> 혹은 <a href='http://pygmaliondoll.cafe24.com/front/php/b/board_list.php?board_no=6&is_pcver=T'>Q&A 게시판</a>에 문의 주시기 바랍니다.</p>"
+                "<p>등록되지 않은 인증번호이거나 인증번호를 잘못 입력하셨습니다.</p><p>인증번호 확인에 문제가 있을 시 <a href='mailto:dollpygmalion@gmail.com'>dollpygmalion@gmail.com</a> 혹은 <a href='http://pygmaliondoll.cafe24.com/front/php/b/board_list.php?board_no=6&is_pcver=T'>Q&A 게시판</a>에 문의 주시기 바랍니다.</p>"
                 :
                 "<p>Cannot find Serial Number in our system.</p><p>Please check again to see if you typed it correctly.</p><p>If you keep seeing this message even with a correct code, please contact us via <a href='mailto:dollpygmalion@gmail.com'>Email</a> or create a post at our <a href='http://pygmaliondolls.com/board/qa/6/?is_pcver=T'>Q&A board</a>.</p>";
             document.getElementById('result').innerHTML = a;
