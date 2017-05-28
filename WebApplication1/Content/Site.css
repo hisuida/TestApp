@@ -45,12 +45,23 @@ textarea {
     form {
         padding-left:35%;
     }
-        .content-box-blue {
+.content-box-blue {
     background-color: #eaecf0;
     border: 1px solid #b9c4e2;
     padding: 15px 20px;
     margin: 20px 0;
 }
+
+ .content-box-red {
+    color: lightcoral;
+    font-size:12px;
+    padding-top:15px;
+    padding-bottom: 10px;
+}
+
+ .info-kor {
+     text-align: right;
+ }
 
 .switch {
   position: relative;
@@ -126,4 +137,7 @@ input:checked + .slider:before {
         form {
         padding-left:5%;
     }
+         .info-kor {
+     text-align: left;
+ }
 }
