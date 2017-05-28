@@ -53,8 +53,8 @@ textarea {
 }
 
  .content-box-red {
-    color: lightcoral;
-    font-size:12px;
+    color: #F6A290;
+    font-size:smaller;
     padding-top:15px;
     padding-bottom: 10px;
 }
