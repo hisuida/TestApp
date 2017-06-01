@@ -1,16 +1,22 @@
 ﻿body {
     padding-top: 50px;
     position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    width: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -23,12 +29,20 @@ textarea {
     div.help-block {
         background-color: #c9e7e2;
         padding: 10px;
-        display: none;
+        visibility: hidden;
         margin-left:5%;
+        font-size: 10pt;
+    }
+
+    div.div-warning {
+        padding-left: 55%;
+        font-size: 10pt !important;
+        position: relative;
+        color: #F6A290 !important;
     }
 
     span.help-block:hover + div.help-block {
-        display: block;
+        visibility: visible;
     }
 
     span.help-block {
@@ -43,7 +57,7 @@ textarea {
     margin-right:15px;
 }
     form {
-        padding-left:35%;
+        padding-left:33%;
     }
 .content-box-blue {
     background-color: #eaecf0;
