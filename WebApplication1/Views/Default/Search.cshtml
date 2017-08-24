@@ -19,6 +19,13 @@
                 <th>Serial Number: </th>
                 <td>@Model.SerialNumber_ID</td>
             </tr>
+            @if (Model.Grade != "A")
+            {
+                <tr>
+                    <th>Item Grade: </th>
+                    <td>@Model.Grade</td>
+                </tr>
+            }
             <tr>
                 <th>Owned By: </th>
                 @if (Model.DisplayID != null)
@@ -63,9 +70,9 @@
                 <td>@Model.Description</td>
             </tr>
             <tr>
-                <td colspan="2">
+                @*<td colspan="2">
                     <img src="@Model.TypeURL" />
-                </td>
+                </td>*@
             </tr>
         </table>
     </div>

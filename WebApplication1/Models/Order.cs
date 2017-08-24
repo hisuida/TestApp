@@ -17,6 +17,7 @@ namespace WebApplication1.Models
         public string DisplayID { get; set; }
         public DateTime OrderDate { get; set; }
         public string OrderNumber { get; set; }
+        public string Grade { get; set; }
         public string SiteName { get; set; }
         public string Description { get; set; }
         public string TypeURL { get; set; } 
