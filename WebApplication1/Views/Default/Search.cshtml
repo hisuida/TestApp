@@ -69,11 +69,13 @@
                 <th>Ordered Item: </th>
                 <td>@Model.Description</td>
             </tr>
-            <tr>
-                @*<td colspan="2">
-                    <img src="@Model.TypeURL" />
-                </td>*@
-            </tr>
+            @if (Model.OtherInfo != null)
+            {
+                <tr>
+                    <th>Other Information:</th>
+                    <td>@Model.OtherInfo</td>
+                </tr>
+            }
         </table>
     </div>
     <br />

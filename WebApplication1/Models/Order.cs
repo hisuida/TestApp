@@ -20,6 +20,7 @@ namespace WebApplication1.Models
         public string Grade { get; set; }
         public string SiteName { get; set; }
         public string Description { get; set; }
-        public string TypeURL { get; set; } 
+        public string TypeURL { get; set; }
+        public string OtherInfo { get; set; } 
     }
 }

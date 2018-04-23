@@ -27,8 +27,12 @@ namespace WebApplication1.App.Data
             Order order = new Order();
             using (var _cn = new MySqlConnection(constr))
             {
-                order = _cn.Query<Order>("Select o.SerialNumber_ID, o.CustomerID, o.DisplayID, o.OrderDate, o.OrderNumber,o.Grade, s.SiteName, p.Description, p.TypeURL from OrderData o Inner Join ProductData p ON o.Type_ID = p.ID Inner Join OrderSite s ON o.OrderSite = s.ID where o.SerialNumber_ID = @SerialNum", new { SerialNum = Serial }).FirstOrDefault();
-               
+                order = _cn.Query<Order>(@"Select o.SerialNumber_ID, o.CustomerID, o.DisplayID, o.OrderDate, o.OrderNumber,o.Grade, s.SiteName, p.Description, p.TypeURL, oi.OtherInfo
+                                           from OrderData o
+                                           Inner Join ProductData p ON o.Type_ID = p.ID
+                                           Inner Join OrderSite s ON o.OrderSite = s.ID
+                                           Left Join OtherInfo oi ON oi.SerialNumber_ID = o.SerialNumber_ID 
+                                           Where o.SerialNumber_ID = @SerialNum", new { SerialNum = Serial }).FirstOrDefault();
             }
             return order;
         }
